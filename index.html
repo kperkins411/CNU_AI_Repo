@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B.S. in Artificial Intelligence | Christopher Newport University</title>
+<meta name="description" content="CNU's Bachelor of Science in Artificial Intelligence: a modern, hands-on curriculum in machine learning, AI infrastructure, computer vision, and large language models.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B386D;
+  --navy-deep:#12264C;
+  --mist:#EBF2FA;
+  --steel:#84888B;
+  --sky:#A9C6EC;
+  --link:#2B5AA9;
+  --ink:#1d2433;
+  --white:#ffffff;
+  --radius:10px;
+  --maxw:980px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+body{
+  font-family:"Source Serif 4",Georgia,serif;
+  font-size:1.0625rem;
+  line-height:1.65;
+  color:var(--ink);
+  background:var(--white);
+}
+h1,h2,h3,.eyebrow,summary,.button,nav{font-family:"Archivo",Arial,sans-serif}
+code,.code-chip,.terminal{font-family:"JetBrains Mono",Consolas,monospace}
+a{color:var(--link)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--link);outline-offset:2px;border-radius:4px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.25rem}
+
+/* ---------- Hero ---------- */
+header.hero{
+  background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
+  color:var(--white);
+  padding:3.5rem 0 3rem;
+}
+.eyebrow{
+  display:inline-block;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--sky);
+  border:1px solid rgba(169,198,236,.45);
+  border-radius:999px;
+  padding:.3rem .9rem;
+  margin-bottom:1.25rem;
+}
+header.hero h1{
+  font-size:clamp(2rem,5.5vw,3.4rem);
+  font-weight:800;
+  line-height:1.08;
+  letter-spacing:-.01em;
+  max-width:18ch;
+}
+header.hero h1 span{color:var(--sky)}
+.hero-sub{
+  font-size:.95rem;
+  font-family:"Archivo",Arial,sans-serif;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.75);
+  margin-top:.75rem;
+}
+.hero-pitch{
+  margin-top:1.5rem;
+  max-width:62ch;
+  font-size:1.15rem;
+  color:#EAF1FA;
+}
+.hero-pitch strong{color:var(--white)}
+.hero-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:2.25rem;
+  margin-top:2.25rem;
+  padding-top:1.5rem;
+  border-top:1px solid rgba(169,198,236,.3);
+}
+.stat .num{
+  font-family:"Archivo",Arial,sans-serif;
+  font-size:1.9rem;
+  font-weight:800;
+  line-height:1;
+  color:var(--white);
+}
+.stat .lbl{
+  font-size:.8rem;
+  letter-spacing:.04em;
+  color:var(--sky);
+  margin-top:.3rem;
+  font-family:"Archivo",Arial,sans-serif;
+}
+
+/* ---------- Differentiators ---------- */
+section{padding:3rem 0}
+.section-title{
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--steel);
+  margin-bottom:1.5rem;
+}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media (max-width:760px){.diff-grid{grid-template-columns:1fr}}
+.diff-card{
+  background:var(--mist);
+  border-radius:var(--radius);
+  padding:1.75rem 1.75rem 2rem;
+  border-top:4px solid var(--navy);
+}
+.diff-card h3{
+  font-size:1.25rem;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:.6rem;
+}
+.diff-card p{font-size:1rem}
+.terminal{
+  margin-top:1.1rem;
+  background:var(--navy-deep);
+  color:var(--sky);
+  border-radius:8px;
+  padding:.9rem 1rem;
+  font-size:.8rem;
+  line-height:1.7;
+  overflow-x:auto;
+  white-space:pre;
+}
+.terminal .p{color:#cfdef3}
+.terminal .c{color:var(--steel)}
+
+/* ---------- Accordions ---------- */
+.acc{
+  border:1px solid #d4deea;
+  border-radius:var(--radius);
+  margin-bottom:1rem;
+  background:var(--white);
+  overflow:hidden;
+}
+.acc>summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:1.1rem 1.4rem;
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--navy);
+  background:var(--mist);
+}
+.acc>summary::-webkit-details-marker{display:none}
+.acc>summary::after{
+  content:"+";
+  font-weight:600;
+  font-size:1.4rem;
+  color:var(--steel);
+  flex:none;
+  line-height:1;
+  transition:transform .2s;
+}
+.acc[open]>summary::after{content:"–"}
+.acc-body{padding:1.25rem 1.4rem 1.5rem}
+.acc-body>p+p{margin-top:.9rem}
+
+/* nested course rows */
+.course{
+  border-bottom:1px solid #e3eaf3;
+}
+.course:last-child{border-bottom:none}
+.course>summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  align-items:baseline;
+  gap:.9rem;
+  padding:.85rem .25rem;
+  font-size:1rem;
+  font-weight:600;
+  color:var(--ink);
+}
+.course>summary::-webkit-details-marker{display:none}
+.course>summary:hover .course-title{color:var(--link)}
+.code-chip{
+  flex:none;
+  font-size:.78rem;
+  font-weight:600;
+  color:var(--white);
+  background:var(--navy);
+  border-radius:5px;
+  padding:.2rem .55rem;
+  letter-spacing:.03em;
+}
+.course-title{font-family:"Archivo",Arial,sans-serif}
+.course>summary::after{
+  content:"+";
+  margin-left:auto;
+  color:var(--steel);
+  font-weight:600;
+}
+.course[open]>summary::after{content:"–"}
+.course-desc{
+  padding:.1rem .25rem 1.1rem 0;
+  font-size:.98rem;
+  color:#333c4d;
+  max-width:72ch;
+}
+.course-desc .meta{
+  display:block;
+  font-family:"Archivo",Arial,sans-serif;
+  font-size:.8rem;
+  color:var(--steel);
+  margin-top:.6rem;
+}
+
+/* ---------- Catalog link ---------- */
+.catalog-note{
+  background:var(--mist);
+  border-radius:var(--radius);
+  padding:1.25rem 1.5rem;
+  font-size:1rem;
+}
+
+/* ---------- Evaluate section ---------- */
+.evaluate{
+  background:var(--navy);
+  color:var(--white);
+  border-radius:var(--radius);
+  padding:2.25rem 2rem 2.5rem;
+}
+.evaluate h2{
+  font-size:1.5rem;
+  font-weight:800;
+  margin-bottom:.75rem;
+}
+.evaluate p{max-width:68ch;color:#E3ECF8}
+.evaluate a{color:var(--sky)}
+.evaluate .doc-link{margin:1.1rem 0 .4rem;font-size:1.02rem}
+.button{
+  display:inline-block;
+  margin:.9rem .6rem 0 0;
+  background:var(--white);
+  color:var(--navy);
+  font-weight:700;
+  font-size:.95rem;
+  text-decoration:none;
+  border-radius:8px;
+  padding:.7rem 1.25rem;
+  transition:transform .12s, box-shadow .12s;
+}
+.button:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.evaluate small{display:block;margin-top:1rem;color:var(--sky);font-family:"Archivo",Arial,sans-serif;font-size:.8rem}
+
+/* ---------- Footer ---------- */
+footer{
+  background:var(--navy-deep);
+  color:var(--sky);
+  padding:2rem 0;
+  font-family:"Archivo",Arial,sans-serif;
+  font-size:.9rem;
+}
+footer a{color:var(--white)}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO (always visible) ================= -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">New Major &middot; Now Enrolling &middot; Fall 2026</span>
+    <h1>Bachelor of Science in <span>Artificial Intelligence</span></h1>
+    <p class="hero-sub">Christopher Newport University &middot; School of Engineering &amp; Computing</p>
+    <p class="hero-pitch">
+      Build intelligent systems that <strong>see, learn, and reason</strong>. CNU&rsquo;s AI major pairs a rigorous
+      computer science and mathematics foundation with a five&#8209;course AI core: two semesters of machine
+      learning, a hands&#8209;on AI infrastructure course, and two semesters of modern AI spanning computer
+      vision through large language models. Students train real models on real hardware, work with the
+      open&#8209;source tools used across the industry, and graduate ready for AI careers or graduate study.
+    </p>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">4</div><div class="lbl">Year B.S. program</div></div>
+      <div class="stat"><div class="num">5</div><div class="lbl">Course AI &amp; data science core</div></div>
+      <div class="stat"><div class="num">2+</div><div class="lbl">Electives to specialize</div></div>
+      <div class="stat"><div class="num">1</div><div class="lbl">Hands-on capstone project</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= WHAT SETS US APART ================= -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title">What Sets Our Program Apart</h2>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <h3>AI Infrastructure</h3>
+        <p>Most AI programs stop at the model. Ours teaches the machinery that makes modern AI actually run.
+        In a dedicated infrastructure course, students provision cloud GPU servers, manage users and
+        permissions, connect remote data servers, and track training runs &mdash; all from the Linux command
+        line. Graduates don&rsquo;t just build models; they can stand up and operate the systems that train
+        and serve them.</p>
+        <div class="terminal"><span class="p">student@cnu:~$</span> ssh ai-lab@gpu-cluster
+<span class="p">ai-lab@gpu-cluster:~$</span> launch-training --gpus 4 <span class="c"># your model, your servers</span></div>
+      </div>
+      <div class="diff-card">
+        <h3>A Genuinely Modern Curriculum</h3>
+        <p>The techniques practitioners are shipping right now are taught as the core of the major &mdash; not
+        as electives. Students work hands-on with open-source and open-weight models throughout the program:
+        training deep networks for vision, fine-tuning language models under real hardware constraints,
+        building retrieval pipelines, and developing agentic systems that plan and act. Because the
+        curriculum is built on the open ecosystem the field itself uses, it evolves as the field does.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPANDABLE SECTIONS ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="section-title">Explore the Major</h2>
+
+    <!-- Degree description -->
+    <details class="acc">
+      <summary>Degree Description</summary>
+      <div class="acc-body">
+        <p>Artificial intelligence is an increasingly important technology that affects many disciplines,
+        including science, engineering, business and public policy. Applications of artificial intelligence
+        include machine learning, computer vision, natural language processing, robotics, data analysis and
+        automated decision systems. Graduates with training in artificial intelligence work in fields such as
+        data science, machine learning engineering, robotics, intelligent software development and research.</p>
+        <p>Artificial intelligence majors at Christopher Newport University study the computational,
+        mathematical and scientific foundations required to design and deploy intelligent systems. Core
+        courses provide a background in computer science, programming, mathematics and scientific computing.
+        Advanced courses in the program focus on machine learning, neural networks, computer vision, large
+        language models, data science and the engineering tools used to deploy modern AI systems.</p>
+        <p>Students also develop practical experience working with real datasets, training and evaluating
+        machine learning models, building AI pipelines and deploying systems in cloud and high-performance
+        computing environments. The program culminates in a capstone project in which students design and
+        implement an original artificial intelligence system.</p>
+        <p>Graduates will be prepared for employment in artificial intelligence, data science and software
+        development, or for further study in graduate programs in artificial intelligence, computer science
+        or related fields.</p>
+        <p>Students pursuing the major in artificial intelligence are strongly encouraged to pursue studies
+        in complementary academic areas where intelligent systems are widely applied. Minors or coursework in
+        fields such as mathematics, physics, business, economics, cybersecurity or the natural sciences may
+        provide valuable interdisciplinary perspectives.</p>
+      </div>
+    </details>
+
+    <!-- Core classes -->
+    <details class="acc">
+      <summary>Core Classes</summary>
+      <div class="acc-body">
+        <p style="margin-bottom:1rem;color:var(--steel);font-size:.95rem">The five-course Artificial
+        Intelligence and Data Science core. Click any course for its description.</p>
+
+        <details class="course">
+          <summary><span class="code-chip">DATA&nbsp;201</span><span class="course-title">Introduction to Data Science</span></summary>
+          <div class="course-desc">
+            <p>An introduction to data science and machine learning in Python. The first half of the course
+            develops data analysis and visualization skills &mdash; data formats and wrangling, time-series
+            data, Pandas, and principled data visualization. The second half introduces machine learning:
+            classification and regression, feature normalization, overfitting and underfitting, and a
+            first look at neural networks, from the perceptron through convolutional networks for image
+            classification, including hands-on work with pretrained open-source vision models.</p>
+          </div>
+        </details>
+
+        <details class="course">
+          <summary><span class="code-chip">DATA&nbsp;301</span><span class="course-title">Data Science Methodology</span></summary>
+          <div class="course-desc">
+            <p>Machine learning with structured data using Python and Pandas. Students learn the full data
+            science workflow: cleaning and preparing real datasets, feature scaling and dimensionality
+            reduction, and building reusable pipelines. Methods include unsupervised clustering, regression,
+            decision trees, random forests and gradient-boosted trees, with rigorous model evaluation through
+            cross-validation, hyperparameter tuning and standard performance metrics. The course also covers
+            explainable AI techniques and time-series analysis.</p>
+          </div>
+        </details>
+
+        <details class="course">
+          <summary><span class="code-chip">CPSC&nbsp;336</span><span class="course-title">Cloud, Linux, and Network Administration</span></summary>
+          <div class="course-desc">
+            <p>Study of Linux-based network and cloud systems, with emphasis on command-line administration,
+            TCP/IP networking, secure remote access, server configuration, virtualization, cloud compute,
+            storage, and database services. Students configure and administer systems such as web servers,
+            database servers, virtual machines, and cloud instances, with attention to functionality,
+            reliability, and security.</p>
+          </div>
+        </details>
+
+        <details class="course">
+          <summary><span class="code-chip">CPSC&nbsp;401</span><span class="course-title">Neural Foundations &amp; Computer Vision</span></summary>
+          <div class="course-desc">
+            <p>Introduces students to the perception layer of modern AI systems through hands-on development
+            of deep learning models for visual tasks. Using PyTorch as the primary framework, students learn
+            to construct and train neural networks beginning with tensor operations, autograd, and modern
+            optimization techniques before progressing to convolutional neural networks for spatial feature
+            extraction. The course examines contemporary deep architectures such as ResNet and emphasizes
+            transfer learning using pre-trained models. Students then apply these methods to real-world
+            computer vision problems, including training and evaluating object detection systems and working
+            with practical evaluation metrics. The course concludes with segmentation methods and an
+            introduction to exporting trained models for deployment, preparing students for subsequent work
+            on hardware optimization and edge AI systems.</p>
+          </div>
+        </details>
+
+        <details class="course">
+          <summary><span class="code-chip">CPSC&nbsp;403</span><span class="course-title">Large Language Models &amp; Agentic Systems</span></summary>
+          <div class="course-desc">
+            <p>Examines the architecture and practical deployment of modern language models, beginning with
+            the transformer framework that underlies contemporary AI systems. Students study the mathematics
+            of attention and implement simplified transformers before transitioning to modern development
+            workflows built on the open-source ecosystem. The course emphasizes practical model adaptation
+            under real hardware constraints through parameter-efficient fine-tuning of open-weight models.
+            Students then build retrieval-augmented generation (RAG) pipelines using vector embeddings,
+            semantic search, and vector databases to integrate external knowledge with language models. The
+            final portion of the course focuses on agentic AI systems, where models interact with tools and
+            external environments through function calling and structured reasoning frameworks to execute
+            multi-step tasks and autonomous workflows.</p>
+          </div>
+        </details>
+      </div>
+    </details>
+
+    <!-- Major electives -->
+    <details class="acc">
+      <summary>Major Electives</summary>
+      <div class="acc-body">
+        <p style="margin-bottom:1rem;color:var(--steel);font-size:.95rem">Students choose two electives to
+        specialize. Click any course for its description.</p>
+
+        <details class="course">
+          <summary><span class="code-chip">CPSC&nbsp;441</span><span class="course-title">Big Data Technologies</span></summary>
+          <div class="course-desc">
+            <p>Covers facets of cloud computing and big data management, including the study of the
+            architecture of the cloud computing model with respect to virtualization, multitenancy, privacy,
+            security, cloud data management and indexing, scheming and cost analysis; also includes relevant
+            programming models, crowd sourcing and data provenance.</p>
+          </div>
+        </details>
+
+        <details class="course">
+          <summary><span class="code-chip">CPSC&nbsp;472</span><span class="course-title">Introduction to Robotics</span></summary>
+          <div class="course-desc">
+            <p>An overview of applied robotics. Covers introductions to configuration space representations,
+            rigid body transforms in 2D and 3D, robot kinematics, basic control theory, motion planning,
+            perception, and machine decision making. Perception topics include basic computer vision and
+            laser rangefinder (LIDAR)-based obstacle detection and mapping. Hands-on development and system
+            integration using various robotic platforms. Programming is done in Linux in a mixture of C++
+            and Python; no prior experience is required.</p>
+          </div>
+        </details>
+
+        <details class="course">
+          <summary><span class="code-chip">CYBR&nbsp;484</span><span class="course-title">AI Applications in Cybersecurity</span></summary>
+          <div class="course-desc">
+            <p>Examines the use of artificial intelligence to analyze and defend modern computing systems.
+            Students learn to treat network traffic, system logs, and executable files as datasets that can
+            be analyzed with statistical and machine learning methods. Using Python, students build tools for
+            parsing security data, detecting anomalous network activity, classifying malware, and identifying
+            phishing attempts. The course also introduces techniques for securing AI-enabled systems,
+            including defenses against prompt injection and related attacks on automated decision systems.
+            Emphasis is placed on practical workflows for threat detection, investigation, and risk
+            prioritization within complex computing environments.</p>
+          </div>
+        </details>
+
+        <details class="course">
+          <summary><span class="code-chip">CPSC&nbsp;510</span><span class="course-title">Artificial Intelligence I</span></summary>
+          <div class="course-desc">
+            <p>An introduction to the mathematical and computational foundations of artificial intelligence,
+            with emphasis on the elements most useful for practical applications. Topics include heuristic
+            search, problem solving, game playing, knowledge representation, logical inference, planning,
+            reasoning under uncertainty, expert systems, machine learning and language understanding,
+            including Markov decision processes, reinforcement learning, hidden Markov models, Bayes nets and
+            Na&iuml;ve Bayes. Programming assignments are required.</p>
+          </div>
+        </details>
+
+        <details class="course">
+          <summary><span class="code-chip">PHYS&nbsp;441</span><span class="course-title">Modeling and Simulation</span></summary>
+          <div class="course-desc">
+            <p>The modeling and simulation of physical systems. Applying software methodologies to the
+            solution of physical problems. Lectures typically involve a short review of a physics topic, such
+            as Keplerian motion, followed by an extensive discussion of the modeling and simulation of the
+            problem.</p>
+          </div>
+        </details>
+
+        <details class="course">
+          <summary><span class="code-chip">PHYS&nbsp;541</span><span class="course-title">Modeling and Simulation</span></summary>
+          <div class="course-desc">
+            <p>Graduate-level study of the modeling and simulation of physical systems. See the CNU
+            Undergraduate Catalog for the complete course description and prerequisites.</p>
+          </div>
+        </details>
+
+        <details class="course">
+          <summary><span class="code-chip">MATH&nbsp;380</span><span class="course-title">Numerical Analysis I</span></summary>
+          <div class="course-desc">
+            <p>A survey of numerical methods for scientific and engineering problems. Topics include
+            root-finding techniques, polynomial and spline interpolation, numerical differentiation and
+            integration, and the numerical solution of initial value problems for ordinary differential
+            equations. Consideration is given to theoretical concepts and to efficient computation
+            procedures. Computer projects are required.</p>
+          </div>
+        </details>
+      </div>
+    </details>
+
+    <!-- Catalog link -->
+    <p class="catalog-note">
+      Full degree requirements, course sequencing, and official descriptions are published in the
+      <a href="https://catalog.cnu.edu/" target="_blank" rel="noopener">CNU Undergraduate Catalog 2026&ndash;27</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ================= EVALUATE WITH AN LLM ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="evaluate">
+      <h2>Don&rsquo;t take our word for it &mdash; ask an AI</h2>
+      <p>We teach students to think critically about AI, so we invite you to do the same about us. The links
+      below hand our complete catalog entry and course descriptions to an independent AI assistant and ask it
+      for an honest evaluation of the program&rsquo;s strengths, weaknesses, and career preparation &mdash;
+      including the questions your family should ask before choosing any AI program.</p>
+      <p class="doc-link"><strong><a href="https://raw.githubusercontent.com/kperkins411/keith_perkins/master/content/CNU_AI_major.pdf">CNU Major in Artificial Intelligence &mdash; Catalog and Class Descriptions</a></strong> &middot; Designed major, launches Fall&nbsp;2026.</p>
+      <a class="button" target="_blank" rel="noopener" href="https://chatgpt.com/?model=gpt-5.5-instant&q=You+are+evaluating+an+undergraduate+Artificial+Intelligence+major+from+the+perspective+of+prospective+students+and+parents.+Read+all+content+in+this+json+file%3A+%0D%0A%0D%0Ahttps%3A%2F%2Fraw.githubusercontent.com%2Fkperkins411%2Fkeith_perkins%2Fmaster%2Fcontent%2FCNU_AI_major.json%0D%0A%0D%0A+Then+evaluate+the+program%27s+strengths%2C+weaknesses%2C+career+preparation%2C+technical+depth%2C+distinctive+features%2C+and+how+it+compares+to+typical+computer+science+or+AI+programs.+Also+comment+on+whether+the+curriculum+appears+modern%2C+practical%2C+and+likely+to+prepare+students+for+AI-related+careers+or+graduate+school.%0D%0A%0D%0A+Write+in+plain+English+for+parents+and+students.+Start+with+a+short+bottom-line+verdict%2C+then+give+a+structured+evaluation.+Include+a+final+section+titled+%22Questions+families+should+ask+before+choosing+this+program.%22">Evaluate major with ChatGPT</a>
+      <a class="button" target="_blank" rel="noopener" href="https://claude.ai/new?q=You+are+evaluating+an+undergraduate+Artificial+Intelligence+major+from+the+perspective+of+prospective+students+and+parents.+Read+all+content+in+this+json+file%3A+%0D%0A%0D%0Ahttps%3A%2F%2Fraw.githubusercontent.com%2Fkperkins411%2Fkeith_perkins%2Fmaster%2Fcontent%2FCNU_AI_major.json%0D%0A%0D%0A+Then+evaluate+the+program%27s+strengths%2C+weaknesses%2C+career+preparation%2C+technical+depth%2C+distinctive+features%2C+and+how+it+compares+to+typical+computer+science+or+AI+programs.+Also+comment+on+whether+the+curriculum+appears+modern%2C+practical%2C+and+likely+to+prepare+students+for+AI-related+careers+or+graduate+school.%0D%0A%0D%0A+Write+in+plain+English+for+parents+and+students.+Start+with+a+short+bottom-line+verdict%2C+then+give+a+structured+evaluation.+Include+a+final+section+titled+%22Questions+families+should+ask+before+choosing+this+program.%22">Evaluate major with Claude</a>
+      <small>Opens an independent AI assistant in a new tab with the evaluation prompt pre-filled.</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Ready to build the future? <a href="https://cnu.edu/sec" target="_blank" rel="noopener">cnu.edu/sec</a> &middot;
+    <a href="mailto:sec@cnu.edu">sec@cnu.edu</a><br>
+    School of Engineering &amp; Computing &middot; Christopher Newport University &middot; Newport News, Virginia
+  </div>
+</footer>
+
+</body>
+</html>
